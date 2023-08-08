@@ -3,12 +3,12 @@ import os from "node:os";
 
 const hostname = os.hostname();
 const app = express();
-const port = 3000;
+const port = 7777;
 
 app.get("/", async (req, res) => {
-	res.send(`Hello from ${hostname}!. Ingnite!`);
+  res.send(`Hello from ${hostname}!. Ingnite!`);
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });
