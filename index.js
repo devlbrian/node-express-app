@@ -1,14 +1,15 @@
-import express from "express";
-import os from "node:os";
+const http = require("http");
 
-const hostname = os.hostname();
-const app = express();
-const port = 7777;
+const requestHandler = (request, response) => {
+  console.log(request.url);
+  response.end("Hello World!");
+};
 
-app.get("/", async (req, res) => {
-  res.send(`Hello from ${hostname}!. Ingnite!`);
-});
+const server = http.createServer(requestHandler);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+server.listen(7777, (err) => {
+  if (err) {
+    return console.log("An error occurred:", err);
+  }
+  console.log("Server is listening on http://localhost:7777");
 });
