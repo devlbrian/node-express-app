@@ -1,4 +1,4 @@
-const http = require("http");
+import http from "http";
 
 const requestHandler = (request, response) => {
   console.log(request.url);
